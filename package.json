@@ -1,0 +1,27 @@
+{
+  "name": "design-patterns",
+  "version": "1.0.0",
+  "description": "Practice code to resfresh the memory about design patterns",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dengue8830/design-patterns.git"
+  },
+  "keywords": [
+    "design",
+    "patterns"
+  ],
+  "author": "dengue8830",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dengue8830/design-patterns/issues"
+  },
+  "homepage": "https://github.com/dengue8830/design-patterns#readme",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
