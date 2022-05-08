@@ -13,9 +13,9 @@
 // }
 
 export class Robot {
-  arms: number;
-  legs: number;
-  weapons: number;
+  arms?: number;
+  legs?: number;
+  weapons?: number;
   turnOn() {}
 
   // ❌ 2nd try: place that logic in the model.

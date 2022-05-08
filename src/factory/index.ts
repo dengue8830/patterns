@@ -55,9 +55,7 @@ const program = () => {
 };
 
 // Solution
-const readPaymentMethod = (): SupportedPaymentMethod => {
-  return "debit-card";
-};
+const readPaymentMethod = (): SupportedPaymentMethod => "debit-card";
 
 const createDebitCardMethod = () => {
   // Incredible complex instantiation logic...
@@ -99,3 +97,5 @@ const solution = () => {
   const paymentMethod = getPaymentMethod();
   paymentMethod.pay();
 };
+
+export {};
