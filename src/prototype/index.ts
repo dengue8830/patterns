@@ -3,6 +3,9 @@
 //   clone(): T;
 // }
 
+// If your language allows constructor override you can make more complex
+// logic like delegate the basics of copy to its parent class.
+
 class Shape {
   color: string;
 
