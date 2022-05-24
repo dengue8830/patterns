@@ -17,26 +17,46 @@ function wrong() {
   // ...
 }
 
-// ✅ 2nd try: separate abstraction from implementation.
+// ✅ 2nd try: separate abstraction from implementation. Kinda obvious.
+
 // Implementations.
 class Product {
   title;
   image;
+  shortDescription;
+  longDescription;
 }
 class LatinProduct extends Product {}
 class EuropeanProduct extends Product {}
 
 // Abstractions.
 class Card {
-  product;
+  product: Product;
 
   constructor(product: Product) {
     this.product = product;
   }
 }
-class FullCard extends Card {}
-class PromotedCard extends Card {}
-class CBDCard extends Card {}
+class FullCard extends Card {
+  render() {
+    const { title, image, longDescription } = this.product;
+    console.log("really long layout" + title + image + longDescription);
+  }
+}
+class PromotedCard extends Card {
+  render() {
+    const { title, image, shortDescription } = this.product;
+    console.log(
+      "really special colorful layout" + title + image + shortDescription
+    );
+  }
+}
+class CBDCard extends Card {
+  render() {
+    const { title, shortDescription } = this.product;
+    console.log("really green layout" + title + shortDescription);
+  }
+}
 
 function correct() {
   const items: Card[] = [];
