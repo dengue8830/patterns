@@ -1,6 +1,6 @@
 // Problem: You have a recursive structure.
-// Solution: An interface that is used as the folder and as the file so
-// it can be used as composites or leaf.
+// Solution: Use polymorphism and recursion to create an interface
+// that is used as the folder and as the file so it can be used as composites or leaf.
 
 interface FSItem {
   title: string;
