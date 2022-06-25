@@ -27,7 +27,7 @@ interface Profile {
 
 interface ProfileIterator {
   getNext(): Profile | undefined;
-  hasNext(): boolean;
+  hasNext(): Promise<boolean>;
 }
 
 class SocialIterator implements ProfileIterator {
@@ -41,7 +41,7 @@ class SocialIterator implements ProfileIterator {
     return this.array[this.index];
   }
 
-  private fetchMore() {
+  private async fetchMore() {
     this.array.push(...this.sdk.fetchMore());
   }
 
@@ -49,17 +49,17 @@ class SocialIterator implements ProfileIterator {
     return this.index === this.array.length - 1;
   }
 
-  hasNext() {
+  async hasNext() {
     if (this.isAtTheTail()) {
-      this.fetchMore();
+      await this.fetchMore();
     }
     return !this.isAtTheTail();
   }
 }
 
-function render(iterator: ProfileIterator) {
+async function render(iterator: ProfileIterator) {
   let html = "";
-  while (iterator.hasNext()) {
+  while (await iterator.hasNext()) {
     html += iterator.getNext().name;
   }
   console.log(html);
