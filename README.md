@@ -1,9 +1,5 @@
 # design-patterns
 
-Practice code to resfresh the memory about design patterns
+Practice code to resfresh the memory about design patterns.
 
-# The Case
-
-Player <- AudioPlayer <- HttpAudioPlayer
-Player <- AudioPlayer <- StreamingAudioPlayer
-Player <- VideoPlayer
+Implemented in Typescript, the approach of each pattern is on functional paradigm based on my understanding and totally opinionated.
