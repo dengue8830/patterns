@@ -1,4 +1,4 @@
-import { sendMessage } from "./send-message.use-case";
+import { di } from "../../../../di/di";
 
 export async function handleSendMessage({
   chatId,
@@ -13,6 +13,7 @@ export async function handleSendMessage({
   if (!text) {
     throw new Error("Text is required");
   }
+  const sendMessage = di.get("sendMessage");
   await sendMessage({ chatId, myId: userId, text });
   // Formats the output
   return { success: true };

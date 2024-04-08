@@ -5,6 +5,7 @@ import { getChat } from "../feature/chat/use-case/send-message/repository/get-ch
 import { sendMessageToChat } from "../feature/chat/use-case/send-message/repository/send-message-to-chat.repository";
 import { archiveChannel } from "../feature/channel/use-case/archive/repository/archive-channel.repository";
 import { getChannel } from "../feature/channel/use-case/archive/repository/get-channel.repository";
+import { sendMessage } from "../feature/chat/use-case/send-message/send-message.use-case";
 
 const container = {};
 
@@ -13,7 +14,8 @@ type Keys =
   | "getChat"
   | "sendMessageToChat"
   | "archiveChannel"
-  | "getChannel";
+  | "getChannel"
+  | "sendMessage";
 
 export const di = {
   get: (key: Keys) => container[key],
@@ -24,6 +26,7 @@ export function setupDI() {
   di.set("getUser", getUser);
   di.set("getChat", getChat);
   di.set("sendMessageToChat", sendMessageToChat);
+  di.set("sendMessage", sendMessage);
   di.set("archiveChannel", archiveChannel);
   di.set("getChannel", getChannel);
 }
